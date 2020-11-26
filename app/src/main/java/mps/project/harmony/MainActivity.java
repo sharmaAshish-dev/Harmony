@@ -41,6 +41,8 @@ public class MainActivity extends Activity implements ActivityCompat.OnRequestPe
 
     TextureView graphTextureView;
 
+    String test;
+
     @SuppressLint("HandlerLeak")
     private final Handler mainHandler = new Handler() {
         @Override
