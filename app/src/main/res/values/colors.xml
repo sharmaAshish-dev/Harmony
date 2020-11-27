@@ -10,5 +10,7 @@
     <color name="logoColorSkyBlue">#CDD0F7</color>
     <color name="logoColorWhite">#FFFFFF</color>
     <color name="logoColorBlack">#1C2025</color>
+    <color name="logoColorOrange">#FFA500</color>
+    <color name="logoColorLightCyan">#BABFFF</color>
 
 </resources>

@@ -15,7 +15,8 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        android:transitionName="splashAnimationImage"/>
 
     <TextView
         android:id="@+id/appName"
@@ -25,10 +26,12 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintVertical_bias="0.6"
         android:text="H A R M O N Y"
         android:textAlignment="center"
         android:textColor="@color/colorAccent"
-        android:textSize="16sp"/>
+        android:textSize="16sp"
+        android:transitionName="splashAnimationText"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

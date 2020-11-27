@@ -2,14 +2,10 @@ package mps.project.harmony.Activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.app.ActivityOptions;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
-import android.util.Pair;
-import android.view.View;
 
-import mps.project.harmony.MainActivity;
 import mps.project.harmony.R;
 
 public class splash extends AppCompatActivity {
@@ -38,7 +34,7 @@ public class splash extends AppCompatActivity {
 
                 // else navigating them to Login Page
 
-                    Intent dashBoardIntent = new Intent(splash.this, MainActivity.class);
+                    Intent dashBoardIntent = new Intent(splash.this, walkThrough.class);
                     // Starting the next Activity
 //                    Pair[] pairs = new Pair[2];
 //
@@ -50,7 +46,7 @@ public class splash extends AppCompatActivity {
 //                    startActivity(i,options.toBundle());
 
                 startActivity(dashBoardIntent);
-
+                overridePendingTransition(R.anim.fade_in,R.anim.fade_out);
                 // closing the activity
                 finish();
             }
