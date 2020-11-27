@@ -4,6 +4,12 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Activities.LoginPage">
+    tools:context=".Activities.Login_signup">
+
+    <com.cuberto.liquid_swipe.LiquidPager
+        android:id="@+id/sliderPager"
+        app:button_drawable="@drawable/ic_plus"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

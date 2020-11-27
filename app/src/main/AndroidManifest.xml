@@ -6,16 +6,15 @@
 
     <application
         android:allowBackup="true"
+        android:hardwareAccelerated="false"
         android:icon="@drawable/ic_logo"
         android:label="@string/app_name"
-        android:roundIcon="@drawable/ic_logo"
-        android:hardwareAccelerated="false"
         android:largeHeap="true"
+        android:roundIcon="@drawable/ic_logo"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Activities.walkThrough"></activity>
-        <activity android:name=".Activities.RegistrationPage" />
-        <activity android:name=".Activities.LoginPage" />
+        <activity android:name=".Activities.Login_signup"></activity>
+        <activity android:name=".Activities.walkThrough" />
         <activity android:name=".Activities.DashBoard" />
         <activity android:name=".Activities.splash">
             <intent-filter>

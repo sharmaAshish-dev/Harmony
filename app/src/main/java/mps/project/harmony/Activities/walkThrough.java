@@ -31,6 +31,7 @@ public class walkThrough extends AppCompatActivity {
 
         pagerAdapter = new ScreenSlidePagerAdapter(getSupportFragmentManager());
         viewPager.setAdapter(pagerAdapter);
+
     }
 
 

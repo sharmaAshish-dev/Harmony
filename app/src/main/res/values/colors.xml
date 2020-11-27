@@ -12,5 +12,6 @@
     <color name="logoColorBlack">#1C2025</color>
     <color name="logoColorOrange">#FFA500</color>
     <color name="logoColorLightCyan">#BABFFF</color>
+    <color name="logoColorDarkCyan">#11cfc5</color>
 
 </resources>

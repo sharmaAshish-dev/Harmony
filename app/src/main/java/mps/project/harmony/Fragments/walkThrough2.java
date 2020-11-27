@@ -10,6 +10,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import mps.project.harmony.Activities.Login_signup;
 import mps.project.harmony.MainActivity;
 import mps.project.harmony.R;
 
@@ -38,7 +39,7 @@ public class walkThrough2 extends Fragment {
 
         skipBtn.setOnClickListener(view1 -> {
             Intent skipIntent = new Intent();
-            skipIntent.setClass(requireContext(), MainActivity.class);
+            skipIntent.setClass(requireContext(), Login_signup.class);
             startActivity(skipIntent);
         });
 
