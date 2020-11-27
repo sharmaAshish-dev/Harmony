@@ -1,5 +1,6 @@
 package mps.project.harmony.Fragments;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -7,14 +8,16 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
+import mps.project.harmony.Activities.DashBoard;
+import mps.project.harmony.Activities.splash;
+import mps.project.harmony.Activities.walkThrough;
 import mps.project.harmony.R;
 
 public class login_page extends Fragment {
 
-    public login_page() {
-        // Required empty public constructor
-    }
+    private TextView loginBtn;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -27,6 +30,16 @@ public class login_page extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_login_page, container, false);
+
+        loginBtn = view.findViewById(R.id.loginBtn);
+
+        loginBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent dashBoardIntent = new Intent(requireContext(), DashBoard.class);
+                startActivity(dashBoardIntent);
+            }
+        });
 
         return view;
     }
