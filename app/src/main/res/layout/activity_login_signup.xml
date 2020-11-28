@@ -8,8 +8,8 @@
 
     <com.cuberto.liquid_swipe.LiquidPager
         android:id="@+id/sliderPager"
-        app:button_drawable="@drawable/ic_plus"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
+        android:layout_height="match_parent"
+        app:button_drawable="@drawable/ic_plus" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

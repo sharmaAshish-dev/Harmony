@@ -277,7 +277,7 @@
                                     android:layout_height="wrap_content"
                                     android:layout_below="@+id/time"
                                     android:text="Min"
-                                    android:textStyle="bold"/>
+                                    android:textStyle="bold" />
 
                             </RelativeLayout>
 
@@ -347,7 +347,7 @@
                                     android:layout_height="wrap_content"
                                     android:layout_below="@+id/sleepTime"
                                     android:text="Hours"
-                                    android:textStyle="bold"/>
+                                    android:textStyle="bold" />
 
                             </RelativeLayout>
 

@@ -13,7 +13,7 @@
         android:roundIcon="@drawable/ic_logo"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Activities.Login_signup"></activity>
+        <activity android:name=".Activities.Login_signup" />
         <activity android:name=".Activities.walkThrough" />
         <activity android:name=".Activities.DashBoard" />
         <activity android:name=".Activities.splash">
