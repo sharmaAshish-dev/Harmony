@@ -10,9 +10,9 @@ import android.view.ViewGroup;
 
 import mps.project.harmony.R;
 
-public class dashboard extends Fragment {
+public class profile extends Fragment {
 
-    public dashboard() {
+    public profile() {
         // Required empty public constructor
     }
 
@@ -20,14 +20,13 @@ public class dashboard extends Fragment {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
+
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View view =  inflater.inflate(R.layout.fragment_dashboard, container, false);
-
-        return view;
+        return inflater.inflate(R.layout.fragment_profile, container, false);
     }
 }

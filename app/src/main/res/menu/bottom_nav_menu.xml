@@ -5,15 +5,15 @@
         android:id="@+id/dashboard"
         android:icon="@drawable/ic_dashboard"
         android:title="Dashboard"
-        app:cnb_iconColor="@color/home"/>
+        app:cnb_iconColor="@color/logoColorPurple"/>
     <item
         android:id="@+id/profile"
         android:icon="@drawable/ic_profile"
         android:title="Profile"
-        app:cnb_iconColor="@color/favorites" />
+        app:cnb_iconColor="@color/logoColorPurple" />
     <item
         android:id="@+id/settings"
         android:icon="@drawable/ic_settings"
         android:title="Settings"
-        app:cnb_iconColor="@color/settings" />
+        app:cnb_iconColor="@color/logoColorPurple" />
 </menu>

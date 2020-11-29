@@ -50,4 +50,7 @@ dependencies {
     implementation "com.airbnb.android:lottie:3.4.0"
 
     implementation 'com.budiyev.android:circular-progress-bar:1.2.2'
+    implementation 'com.ismaeldivita.chipnavigation:chip-navigation-bar:1.2.0'
+
+
 }
