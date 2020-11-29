@@ -10,9 +10,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-import mps.project.harmony.Activities.DashBoard;
-import mps.project.harmony.Activities.splash;
-import mps.project.harmony.Activities.walkThrough;
 import mps.project.harmony.R;
 
 public class login_page extends Fragment {
@@ -36,7 +33,7 @@ public class login_page extends Fragment {
         loginBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent dashBoardIntent = new Intent(requireContext(), DashBoard.class);
+                Intent dashBoardIntent = new Intent(requireContext(), homeScreen.class);
                 startActivity(dashBoardIntent);
             }
         });

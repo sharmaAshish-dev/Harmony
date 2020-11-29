@@ -1,0 +1,522 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:app="http://schemas.android.com/apk/res-auto"
+xmlns:tools="http://schemas.android.com/tools"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+android:background="#EFEFEF"
+tools:context=".Fragments.dashboard">
+
+<View
+    android:layout_width="match_parent"
+    android:layout_height="250dp"
+    android:background="@color/logoColorPurple"
+    android:elevation="1dp"
+    android:outlineProvider="bounds" />
+
+<TextView
+    android:id="@+id/date"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_alignParentStart="true"
+    android:layout_alignParentEnd="true"
+    android:layout_marginStart="40dp"
+    android:layout_marginTop="40dp"
+    android:layout_marginEnd="40dp"
+    android:elevation="1dp"
+    android:fontFamily="@font/nunito"
+    android:text="April 24, 2020"
+    android:textColor="@color/logoColorSkyBlue" />
+
+<TextView
+    android:id="@+id/greeting"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_below="@+id/date"
+    android:layout_alignParentStart="true"
+    android:layout_alignParentEnd="true"
+    android:layout_marginStart="40sp"
+    android:layout_marginEnd="40sp"
+    android:layout_marginBottom="40sp"
+    android:elevation="1dp"
+    android:text="Good day, Ashish!"
+    android:textColor="@color/logoColorWhite"
+    android:textSize="28sp"
+    android:textStyle="bold" />
+
+<ScrollView
+    android:id="@+id/appFeatures"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_below="@+id/greeting"
+    android:elevation="2dp"
+    android:scrollbars="none">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:baselineAligned="false"
+            android:orientation="horizontal"
+            android:weightSum="100">
+
+            <RelativeLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="5dp"
+                android:layout_marginBottom="10dp"
+                android:layout_weight="50">
+
+                <RelativeLayout
+                    android:id="@+id/card1"
+                    android:layout_width="match_parent"
+                    android:layout_height="220dp"
+                    android:layout_marginStart="15dp"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginEnd="8dp"
+                    android:background="@drawable/dashboard_card"
+                    android:elevation="8dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical"
+                        android:weightSum="100">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="20sp"
+                            android:layout_weight="40"
+                            android:paddingStart="20sp"
+                            android:text="Calories   🥑"
+                            android:textColor="@color/logoColorBlack"
+                            android:textSize="20sp"
+                            android:textStyle="bold" />
+
+                        <RelativeLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content">
+
+                            <com.budiyev.android.circularprogressbar.CircularProgressBar
+                                android:id="@+id/progress_bar"
+                                android:layout_width="match_parent"
+                                android:layout_height="110dp"
+                                android:layout_centerInParent="true"
+                                app:animateProgress="true"
+                                app:backgroundStrokeColor="#F6F4F4"
+                                app:backgroundStrokeWidth="12dp"
+                                app:drawBackgroundStroke="true"
+                                app:foregroundStrokeCap="round"
+                                app:foregroundStrokeColor="#FE5741"
+                                app:foregroundStrokeWidth="12dp"
+                                app:indeterminate="false"
+                                app:indeterminateMinimumAngle="45"
+                                app:indeterminateRotationAnimationDuration="1200"
+                                app:indeterminateSweepAnimationDuration="600"
+                                app:maximum="100"
+                                app:progress="30"
+                                app:progressAnimationDuration="100"
+                                app:startAngle="90" />
+
+                            <RelativeLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerInParent="true">
+
+                                <TextView
+                                    android:id="@+id/calories"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="@font/nunito_bold"
+                                    android:gravity="center"
+                                    android:text="362"
+                                    android:textColor="@color/logoColorBlack"
+                                    android:textSize="18sp" />
+
+                                <TextView
+                                    android:id="@+id/txtCalUnit"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_below="@+id/calories"
+                                    android:gravity="center_horizontal"
+                                    android:text="KCal" />
+
+                            </RelativeLayout>
+
+
+                        </RelativeLayout>
+
+
+                    </LinearLayout>
+
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/card2"
+                    android:layout_width="match_parent"
+                    android:layout_height="220dp"
+                    android:layout_below="@+id/card1"
+                    android:layout_marginStart="15dp"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginEnd="8dp"
+                    android:background="@drawable/dashboard_card"
+                    android:elevation="8dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical"
+                        android:weightSum="100">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="20sp"
+                            android:layout_weight="40"
+                            android:paddingStart="20sp"
+                            android:text="Heart   ❤"
+                            android:textColor="@color/logoColorBlack"
+                            android:textSize="20sp"
+                            android:textStyle="bold" />
+
+                        <com.airbnb.lottie.LottieAnimationView
+                            android:id="@+id/animationView"
+                            android:layout_width="match_parent"
+                            android:layout_height="60dp"
+                            android:scaleX="3"
+                            android:scaleY="1"
+                            app:lottie_autoPlay="true"
+                            app:lottie_loop="true"
+                            app:lottie_rawRes="@raw/heart_beat" />
+
+                        <RelativeLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="8dp"
+                            android:paddingStart="20sp"
+                            android:paddingEnd="20sp">
+
+                            <TextView
+                                android:id="@+id/bpm"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/nunito_bold"
+                                android:text="891"
+                                android:textColor="@color/logoColorBlack"
+                                android:textSize="18sp" />
+
+                            <TextView
+                                android:id="@+id/txtBpm"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/bpm"
+                                android:text="Steps"
+                                android:textColor="#7AC0FA" />
+
+                        </RelativeLayout>
+
+                    </LinearLayout>
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/card3"
+                    android:layout_width="match_parent"
+                    android:layout_height="120dp"
+                    android:layout_below="@+id/card2"
+                    android:layout_marginStart="15dp"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginBottom="15dp"
+                    android:background="@drawable/dashboard_card"
+                    android:elevation="8dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical"
+                        android:weightSum="100">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="20sp"
+                            android:layout_weight="40"
+                            android:paddingStart="20sp"
+                            android:text="Training   ⏰"
+                            android:textColor="@color/logoColorBlack"
+                            android:textSize="20sp"
+                            android:textStyle="bold" />
+
+                        <RelativeLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="8dp"
+                            android:paddingStart="20sp"
+                            android:paddingEnd="20sp">
+
+                            <TextView
+                                android:id="@+id/time"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/nunito_bold"
+                                android:text="2"
+                                android:textColor="@color/logoColorBlack"
+                                android:textSize="18sp" />
+
+                            <TextView
+                                android:id="@+id/txtTimeUnit"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/time"
+                                android:text="Min"
+                                android:textStyle="bold" />
+
+                        </RelativeLayout>
+
+                    </LinearLayout>
+
+                </RelativeLayout>
+
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginBottom="10dp"
+                android:layout_weight="50"
+                android:elevation="12dp">
+
+                <RelativeLayout
+                    android:id="@+id/card4"
+                    android:layout_width="match_parent"
+                    android:layout_height="120dp"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginEnd="15dp"
+                    android:background="@drawable/dashboard_card"
+                    android:elevation="8dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical"
+                        android:weightSum="100">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="20sp"
+                            android:layout_weight="40"
+                            android:paddingStart="20sp"
+                            android:text="Sleep   🌚"
+                            android:textColor="@color/logoColorBlack"
+                            android:textSize="20sp"
+                            android:textStyle="bold" />
+
+                        <RelativeLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="8dp"
+                            android:paddingStart="20sp"
+                            android:paddingEnd="20sp">
+
+                            <TextView
+                                android:id="@+id/sleepTime"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/nunito_bold"
+                                android:text="2"
+                                android:textColor="@color/logoColorBlack"
+                                android:textSize="18sp" />
+
+                            <TextView
+                                android:id="@+id/txtSleepTimeUnit"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/sleepTime"
+                                android:text="Hours"
+                                android:textStyle="bold" />
+
+                        </RelativeLayout>
+
+                    </LinearLayout>
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/card5"
+                    android:layout_width="match_parent"
+                    android:layout_height="220dp"
+                    android:layout_below="@+id/card4"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginEnd="15dp"
+                    android:background="@drawable/dashboard_card"
+                    android:backgroundTint="#4EABF9"
+                    android:elevation="8dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical"
+                        android:weightSum="100">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="20sp"
+                            android:layout_weight="40"
+                            android:paddingStart="20sp"
+                            android:text="Walk   🏃"
+                            android:textColor="@color/logoColorWhite"
+                            android:textSize="20sp"
+                            android:textStyle="bold" />
+
+                        <RelativeLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content">
+
+                            <com.budiyev.android.circularprogressbar.CircularProgressBar
+                                android:id="@+id/totalStepProgressBar"
+                                android:layout_width="match_parent"
+                                android:layout_height="110dp"
+                                android:layout_centerInParent="true"
+                                app:animateProgress="true"
+                                app:backgroundStrokeColor="#7AC0FA"
+                                app:backgroundStrokeWidth="12dp"
+                                app:drawBackgroundStroke="true"
+                                app:foregroundStrokeCap="round"
+                                app:foregroundStrokeColor="#FFFFFF"
+                                app:foregroundStrokeWidth="12dp"
+                                app:indeterminate="false"
+                                app:indeterminateMinimumAngle="45"
+                                app:indeterminateRotationAnimationDuration="1200"
+                                app:indeterminateSweepAnimationDuration="600"
+                                app:maximum="100"
+                                app:progress="30"
+                                app:progressAnimationDuration="100"
+                                app:startAngle="180" />
+
+                            <RelativeLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerInParent="true">
+
+                                <TextView
+                                    android:id="@+id/steps"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="@font/nunito_bold"
+                                    android:gravity="center"
+                                    android:text="891"
+                                    android:textColor="@color/logoColorWhite"
+                                    android:textSize="18sp" />
+
+                                <TextView
+                                    android:id="@+id/txtSteps"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_below="@+id/steps"
+                                    android:gravity="center_horizontal"
+                                    android:text="Steps"
+                                    android:textColor="#7AC0FA" />
+
+                            </RelativeLayout>
+
+
+                        </RelativeLayout>
+
+
+                    </LinearLayout>
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/card6"
+                    android:layout_width="match_parent"
+                    android:layout_height="220dp"
+                    android:layout_below="@+id/card5"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginEnd="15dp"
+                    android:layout_marginBottom="20sp"
+                    android:background="@drawable/dashboard_card"
+                    android:elevation="8dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical"
+                        android:weightSum="100">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="20sp"
+                            android:layout_weight="40"
+                            android:paddingStart="20sp"
+                            android:text="Water   💦"
+                            android:textColor="@color/logoColorBlack"
+                            android:textSize="20sp"
+                            android:textStyle="bold" />
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="80dp"
+                            android:paddingStart="5sp"
+                            android:paddingEnd="20sp"
+                            android:scaleType="fitStart"
+                            android:src="@drawable/ic_water_lines" />
+
+                        <RelativeLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="25dp"
+                            android:paddingStart="20sp"
+                            android:paddingEnd="20sp">
+
+                            <TextView
+                                android:id="@+id/litre"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/nunito_bold"
+                                android:text="1.2"
+                                android:textColor="@color/logoColorBlack"
+                                android:textSize="18sp" />
+
+                            <TextView
+                                android:id="@+id/txtWaterUnit"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/litre"
+                                android:text="Litre" />
+
+                        </RelativeLayout>
+
+                    </LinearLayout>
+
+                </RelativeLayout>
+
+
+            </RelativeLayout>
+
+        </LinearLayout>
+
+
+    </RelativeLayout>
+
+</ScrollView>
+
+</RelativeLayout>
