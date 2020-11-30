@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Activities.heartBeatMeasure">
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/bg_heart_monitor" />
+
+    <TextView
+        android:id="@+id/heartRate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="20sp"
+        android:layout_marginTop="20sp"
+        android:layout_marginEnd="20sp"
+        android:fontFamily="sans-serif-light"
+        android:gravity="start"
+        android:inputType="number"
+        android:text="70"
+        android:textColor="@color/logoColorWhite"
+        android:textSize="200dp" />
+
+    <TextView
+        android:id="@+id/txtBpm"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/heartRate"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="40sp"
+        android:fontFamily="sans-serif-light"
+        android:gravity="start"
+        android:text="bpm"
+        android:textColor="@color/logoColorWhite"
+        android:textSize="34sp" />
+
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/animationView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/txtBpm"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginTop="20dp"
+        app:lottie_autoPlay="true"
+        app:lottie_loop="true"
+        app:lottie_rawRes="@raw/hearbeat_reading" />
+
+</RelativeLayout>

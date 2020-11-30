@@ -52,5 +52,4 @@ dependencies {
     implementation 'com.budiyev.android:circular-progress-bar:1.2.2'
     implementation 'com.ismaeldivita.chipnavigation:chip-navigation-bar:1.2.0'
 
-
 }

@@ -2,16 +2,14 @@ package mps.project.harmony.Fragments;
 
 import android.content.Intent;
 import android.os.Bundle;
-
-import androidx.fragment.app.Fragment;
-
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import androidx.fragment.app.Fragment;
+
 import mps.project.harmony.Activities.Login_signup;
-import mps.project.harmony.MainActivity;
 import mps.project.harmony.R;
 
 public class walkThrough3 extends Fragment {
