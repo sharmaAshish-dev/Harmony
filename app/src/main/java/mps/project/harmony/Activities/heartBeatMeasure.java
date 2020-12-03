@@ -1,7 +1,6 @@
 package mps.project.harmony.Activities;
 
 import android.os.Bundle;
-import android.view.View;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -17,14 +16,14 @@ public class heartBeatMeasure extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_heart_beat_measure);
 
-        test = findViewById(R.id.heartRate);
-
-        test.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-//                startActivity(new Intent(heartBeatMeasure.this, .class));
-            }
-        });
+//        test = findViewById(R.id.heartRate);
+//
+//        test.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+////                startActivity(new Intent(heartBeatMeasure.this, .class));
+//            }
+//        });
 
     }
 }
