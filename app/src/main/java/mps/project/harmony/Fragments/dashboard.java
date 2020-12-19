@@ -9,12 +9,13 @@ import android.widget.RelativeLayout;
 
 import androidx.fragment.app.Fragment;
 
-import mps.project.harmony.Activities.heartBeatMeasure;
+import mps.project.harmony.Activities.HeartMeter;
+import mps.project.harmony.Activities.proteinCalculator;
 import mps.project.harmony.R;
 
 public class dashboard extends Fragment {
 
-    RelativeLayout heartRateScanner;
+    RelativeLayout proteinCalculator, heartRateScanner;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -28,12 +29,21 @@ public class dashboard extends Fragment {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_dashboard, container, false);
 
+        proteinCalculator = view.findViewById(R.id.card3);
         heartRateScanner = view.findViewById(R.id.card2);
+
+        proteinCalculator.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getActivity(), proteinCalculator.class);
+                startActivity(intent);
+            }
+        });
 
         heartRateScanner.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(getActivity(), heartBeatMeasure.class);
+                Intent intent = new Intent(getActivity(), HeartMeter.class);
                 startActivity(intent);
             }
         });

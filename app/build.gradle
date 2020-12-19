@@ -51,5 +51,6 @@ dependencies {
 
     implementation 'com.budiyev.android:circular-progress-bar:1.2.2'
     implementation 'com.ismaeldivita.chipnavigation:chip-navigation-bar:1.2.0'
+    implementation 'com.github.warkiz.widget:indicatorseekbar:2.1.2'
 
 }

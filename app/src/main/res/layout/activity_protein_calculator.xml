@@ -1,0 +1,343 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Activities.proteinCalculator">
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/bg_heart_monitor" />
+
+    <TextView
+        android:id="@+id/proteinIntake"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="20sp"
+        android:layout_marginTop="20sp"
+        android:layout_marginEnd="20sp"
+        android:fontFamily="sans-serif-light"
+        android:gravity="start"
+        android:inputType="number"
+        android:text="0"
+        android:textColor="@color/logoColorWhite"
+        android:textSize="140dp" />
+
+    <TextView
+        android:id="@+id/txtUnit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/proteinIntake"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="40sp"
+        android:layout_marginBottom="20dp"
+        android:fontFamily="sans-serif-light"
+        android:gravity="start"
+        android:text="Grams"
+        android:textColor="@color/logoColorWhite"
+        android:textSize="34sp" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/txtUnit"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="-5dp"
+        android:scrollbars="none">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/round_edge_card">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="true"
+                android:layout_margin="20dp"
+                android:background="@drawable/round_edge_card"
+                android:elevation="8dp">
+
+                <TextView
+                    android:id="@+id/txtGender"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginEnd="20dp"
+                    android:layout_marginBottom="10dp"
+                    android:fontFamily="sans-serif-light"
+                    android:text="Gender"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+                <LinearLayout
+                    android:id="@+id/genderSelectLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/txtGender"
+                    android:layout_marginStart="30dp"
+                    android:layout_marginEnd="30dp"
+                    android:layout_marginBottom="10dp"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:weightSum="100">
+
+                    <LinearLayout
+                        android:id="@+id/male"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="50"
+                        android:gravity="center"
+                        android:orientation="horizontal">
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="50dp">
+
+                            <ImageView
+                                android:layout_width="50dp"
+                                android:layout_height="50dp"
+                                android:elevation="2dp"
+                                android:src="@drawable/male" />
+
+                            <TextView
+                                android:id="@+id/maleCheckBox"
+                                android:layout_width="match_parent"
+                                android:layout_height="35dp"
+                                android:layout_alignParentBottom="true"
+                                android:background="@drawable/state_selector"
+                                android:gravity="center_vertical"
+                                android:paddingStart="50dp"
+                                android:text="Male"
+                                android:textColor="@color/logoColorBlack"
+                                android:textSize="18sp" />
+
+                        </RelativeLayout>
+
+                    </LinearLayout>
+
+                    <Space
+                        android:layout_width="60dp"
+                        android:layout_height="wrap_content" />
+
+                    <LinearLayout
+                        android:id="@+id/female"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="50"
+                        android:gravity="center"
+                        android:orientation="horizontal">
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="50dp">
+
+                            <ImageView
+                                android:layout_width="50dp"
+                                android:layout_height="50dp"
+                                android:elevation="2dp"
+                                android:src="@drawable/female" />
+
+                            <TextView
+                                android:id="@+id/femaleCheckBox"
+                                android:layout_width="match_parent"
+                                android:layout_height="35dp"
+                                android:layout_alignParentBottom="true"
+                                android:background="@drawable/state_selector"
+                                android:gravity="center_vertical"
+                                android:paddingStart="50dp"
+                                android:text="female"
+                                android:textColor="@color/logoColorBlack"
+                                android:textSize="18sp" />
+
+                        </RelativeLayout>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/txtWeight"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/genderSelectLayout"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginEnd="20dp"
+                    android:layout_marginBottom="10dp"
+                    android:fontFamily="sans-serif-light"
+                    android:text="Weight (kg)"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+                <LinearLayout
+                    android:id="@+id/weightSeeker"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/txtWeight"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginEnd="20dp"
+                    android:layout_marginBottom="20dp"
+                    android:orientation="horizontal"
+                    android:weightSum="100">
+
+                    <ImageView
+                        android:id="@+id/subtractWeight"
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
+                        android:layout_marginEnd="5dp"
+                        android:src="@drawable/ic_subtract" />
+
+                    <com.warkiz.widget.IndicatorSeekBar
+                        android:id="@+id/weightBar"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="100"
+                        app:isb_indicator_color="@color/logoColorGold"
+                        app:isb_indicator_text_color="@color/logoColorBlack"
+                        app:isb_indicator_text_size="18sp"
+                        app:isb_max="180"
+                        app:isb_min="1.0"
+                        app:isb_only_thumb_draggable="false"
+                        app:isb_progress="60"
+                        app:isb_progress_value_float="true"
+                        app:isb_seek_smoothly="true"
+                        app:isb_show_indicator="circular_bubble"
+                        app:isb_show_thumb_text="true"
+                        app:isb_show_tick_marks_type="oval"
+                        app:isb_show_tick_texts="true"
+                        app:isb_thumb_color="@color/logoColorPink"
+                        app:isb_thumb_size="20dp"
+                        app:isb_tick_marks_color="@color/logoColorLightCyan"
+                        app:isb_tick_marks_size="13dp"
+                        app:isb_tick_texts_color="@color/logoColorGold"
+                        app:isb_track_background_color="@color/logoColorOrange"
+                        app:isb_track_background_size="2dp"
+                        app:isb_track_progress_color="@color/logoColorDarkCyan"
+                        app:isb_track_progress_size="4dp"
+                        app:isb_track_rounded_corners="true"
+                        app:isb_user_seekable="true" />
+
+                    <ImageView
+                        android:id="@+id/addWeight"
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
+                        android:src="@drawable/ic_add" />
+
+
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/txtFitnessLevel"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/weightSeeker"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginEnd="20dp"
+                    android:layout_marginBottom="10dp"
+                    android:fontFamily="sans-serif-light"
+                    android:text="Fitness level"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+                <RadioGroup
+                    android:id="@+id/fitnesslevel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/txtFitnessLevel"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginEnd="20dp"
+                    android:checkedButton="@id/radioBtn1"
+                    android:orientation="vertical">
+
+                    <RadioButton
+                        android:id="@+id/radioBtn1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:tag="1.2"
+                        android:text="Little or No Exercise" />
+
+                    <RadioButton
+                        android:id="@+id/radioBtn2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:tag="1.375"
+                        android:text="Low level training" />
+
+                    <RadioButton
+                        android:id="@+id/radioBtn3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:tag="1.465"
+                        android:text="Active level training" />
+
+                    <RadioButton
+                        android:id="@+id/radioBtn4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:tag="1.55"
+                        android:text="Sports" />
+
+                    <RadioButton
+                        android:id="@+id/radioBtn5"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:tag="1.725"
+                        android:text="Weight training" />
+
+                </RadioGroup>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/calculateProteinBtn"
+                    android:layout_width="120dp"
+                    android:layout_height="40dp"
+                    android:layout_below="@+id/fitnesslevel"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginBottom="20dp"
+                    app:cardCornerRadius="20dp">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/bg_heart_monitor">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:fontFamily="sans-serif-light"
+                            android:gravity="center"
+                            android:text="Calculate"
+                            android:textColor="@color/logoColorWhite"
+                            android:textSize="18sp" />
+
+                    </RelativeLayout>
+
+                </androidx.cardview.widget.CardView>
+
+            </RelativeLayout>
+
+        </RelativeLayout>
+
+    </ScrollView>
+
+</RelativeLayout>

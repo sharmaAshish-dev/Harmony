@@ -2,6 +2,26 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="mps.project.harmony">
 
+    <uses-feature
+        android:name="android.hardware.sensor.stepcounter"
+        android:required="true" />
+
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.ACTIVITY_RECOGNITION" />
+    <uses-permission android:name="android.hardware.sensor.stepcounter" />
+    <uses-permission android:name="android.hardware.sensor.stepdetector" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+
+    <uses-feature
+        android:name="android.hardware.camera"
+        android:required="true" />
+    <uses-feature
+        android:name="android.hardware.camera.flash"
+        android:required="true" />
+    <uses-feature android:name="android.hardware.camera.autofocus" />
+
     <application
         android:allowBackup="true"
         android:hardwareAccelerated="false"
@@ -11,10 +31,11 @@
         android:roundIcon="@drawable/ic_logo"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Activities.heartBeatMeasure" />
+        <activity android:name=".Activities.proteinCalculator"></activity>
         <activity android:name=".Activities.homeScreen" />
         <activity android:name=".Activities.Login_signup" />
         <activity android:name=".Activities.walkThrough" />
+        <activity android:name=".Activities.HeartMeter" />
         <activity android:name=".Activities.splash">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
