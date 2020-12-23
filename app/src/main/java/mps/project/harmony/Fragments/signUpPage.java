@@ -17,9 +17,10 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.FirebaseDatabase;
 
 import mps.project.harmony.Activities.homeScreen;
+import mps.project.harmony.Models.User;
 import mps.project.harmony.R;
 
 public class signUpPage extends Fragment {
@@ -70,10 +71,11 @@ public class signUpPage extends Fragment {
                             progressDialog.setMessage("Please wait");
                             progressDialog.show();
 
+                            String userName = uName.getText().toString();
                             String userEmail = uEmail.getText().toString();
                             String userPassword = uPassword.getText().toString();
 
-                            registerUser("", userEmail, userPassword);
+                            registerUser(userName, userEmail, userPassword);
                         }
 
                     }
@@ -94,8 +96,14 @@ public class signUpPage extends Fragment {
                 if (task.isSuccessful()) {
 
                     progressDialog.dismiss();
-                    FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
-                    updateUI(user);
+
+                    User user = new User(displayName, Email, password);
+
+                    FirebaseDatabase.getInstance().getReference("Users")
+                            .child(FirebaseAuth.getInstance().getCurrentUser().getUid())
+                            .setValue(user);
+
+                    updateUI();
 
                 } else {
                     progressDialog.hide();
@@ -106,9 +114,8 @@ public class signUpPage extends Fragment {
 
     }
 
-    private void updateUI(FirebaseUser firebaseUser) {
+    private void updateUI() {
         Intent signedIn = new Intent(requireContext(), homeScreen.class);
-        signedIn.putExtra("user", firebaseUser);
         startActivity(signedIn);
         requireActivity().finish();
     }

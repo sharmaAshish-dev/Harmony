@@ -41,7 +41,7 @@ public class bmiCalculator extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 if (userHeight.getProgressFloat() < 180) {
-                    userHeight.setProgress(userWeight.getProgressFloat() + 0.1f);
+                    userHeight.setProgress(userHeight.getProgressFloat() + 0.1f);
                 }
             }
         });
@@ -50,7 +50,7 @@ public class bmiCalculator extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 if (userHeight.getProgressFloat() > 1) {
-                    userHeight.setProgress(userWeight.getProgressFloat() - 0.1f);
+                    userHeight.setProgress(userHeight.getProgressFloat() - 0.1f);
                 }
             }
         });
@@ -73,14 +73,15 @@ public class bmiCalculator extends AppCompatActivity {
             }
         });
 
-//        Body Mass Index (BMI) = (weight (kg) / height (m2)
+//        Body Mass Index (BMI) = (weight (kg) / height (m2) / height (m2)
 //        Example: Your weight = 68 kg / Your height = 1.65 m (165 cm)
-//        BMI Calculation: 68 ÷ 1.652 = 24.98
+//        BMI Calculation: 68 ÷ 1.652 ÷ 1.652 = 24.98
 
         calculateBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                int bmiNumber = (int) (userWeight.getProgressFloat() * (userHeight.getProgressFloat() / 100));
+                double heightInMetre = userHeight.getProgressFloat() / 100;
+                int bmiNumber = (int) (userWeight.getProgressFloat() / heightInMetre / heightInMetre);
                 bmiScore.setText(String.valueOf(bmiNumber));
 
                 if (bmiNumber > 0 && bmiNumber <= 16) {

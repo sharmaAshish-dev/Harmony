@@ -69,7 +69,7 @@
                 android:layout_marginEnd="40sp"
                 android:layout_marginBottom="10sp"
                 android:elevation="1dp"
-                android:text="Good day, Ashish!"
+                android:text="Good day, "
                 android:textColor="@color/logoColorWhite"
                 android:textSize="28sp"
                 android:textStyle="bold" />

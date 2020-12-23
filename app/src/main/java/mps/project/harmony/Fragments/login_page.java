@@ -1,5 +1,6 @@
 package mps.project.harmony.Fragments;
 
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -22,6 +23,7 @@ public class login_page extends Fragment {
     private TextView loginBtn;
     private EditText uEmail, uPassword;
     private FirebaseAuth mAuth;
+    private ProgressDialog progressDialog;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -63,6 +65,11 @@ public class login_page extends Fragment {
                     if (!uEmail.getText().toString().contains("@")) {
                         Toast.makeText(requireContext(), "Please Enter a valid Email ID", Toast.LENGTH_SHORT).show();
                     } else {
+
+                        progressDialog = new ProgressDialog(requireContext());
+                        progressDialog.setMessage("Please wait");
+                        progressDialog.show();
+
                         logUserIn(uEmail.getText().toString(), uPassword.getText().toString());
                     }
                 }
@@ -78,11 +85,13 @@ public class login_page extends Fragment {
                 .addOnCompleteListener(requireActivity(), task -> {
                     if (task.isSuccessful()) {
                         // Sign in success, update UI with the signed-in user's information
+                        progressDialog.dismiss();
                         FirebaseUser user = mAuth.getCurrentUser();
                         updateUI(user);
 
                     } else {
                         // If sign in fails, display a message to the user.
+                        progressDialog.hide();
                         Toast.makeText(requireContext(), "Authentication failed.",
                                 Toast.LENGTH_SHORT).show();
                     }

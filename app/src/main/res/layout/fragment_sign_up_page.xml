@@ -72,7 +72,7 @@
                         android:layout_height="wrap_content"
                         android:layout_below="@+id/txtName"
                         android:background="@color/logoColorWhite"
-                        android:hint="Enter Email Address"
+                        android:hint="Enter Name"
                         android:inputType="textEmailAddress"
                         android:paddingTop="20sp"
                         android:paddingEnd="20sp"
