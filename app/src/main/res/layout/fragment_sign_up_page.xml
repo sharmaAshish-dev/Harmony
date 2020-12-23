@@ -123,44 +123,10 @@
                         android:backgroundTint="@color/logoColorDarkCyan" />
 
                     <TextView
-                        android:id="@+id/txtMobile"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_alignParentStart="true"
-                        android:layout_alignParentEnd="true"
-                        android:text="Mobile No"
-                        android:layout_marginTop="20sp"
-                        android:layout_below="@+id/seperator3"
-                        android:textColor="@color/logoColorDarkCyan"
-                        android:textStyle="bold" />
-
-                    <EditText
-                        android:id="@+id/userMobile"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_below="@+id/txtMobile"
-                        android:background="@color/logoColorWhite"
-                        android:hint="Enter Email Address"
-                        android:inputType="textEmailAddress"
-                        android:paddingTop="20sp"
-                        android:paddingEnd="20sp"
-                        android:paddingBottom="10dp"
-                        android:textColor="@color/logoColorBlack"
-                        android:textSize="18sp" />
-
-                    <View
-                        android:id="@+id/seperator4"
-                        android:layout_width="match_parent"
-                        android:layout_height="1dp"
-                        android:layout_below="@+id/userMobile"
-                        android:background="@color/logoColorDarkCyan"
-                        android:backgroundTint="@color/logoColorDarkCyan" />
-
-                    <TextView
                         android:id="@+id/txtPassword"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_below="@+id/seperator4"
+                        android:layout_below="@+id/seperator3"
                         android:layout_alignParentStart="true"
                         android:layout_alignParentEnd="true"
                         android:layout_marginTop="20sp"
@@ -201,15 +167,13 @@
                         android:background="@drawable/button_background_blue"
                         android:gravity="center"
                         android:padding="10dp"
-                        android:text="Login"
+                        android:text="Sign up"
                         android:textColor="@color/logoColorWhite"
                         android:textSize="20sp" />
 
                 </RelativeLayout>
 
             </ScrollView>
-
-
 
         </RelativeLayout>
 

@@ -15,7 +15,7 @@ import mps.project.harmony.R;
 
 public class dashboard extends Fragment {
 
-    RelativeLayout proteinCalculator, heartRateScanner;
+    RelativeLayout proteinCalculator, heartRateScanner, FatCalculator;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -31,6 +31,7 @@ public class dashboard extends Fragment {
 
         proteinCalculator = view.findViewById(R.id.card3);
         heartRateScanner = view.findViewById(R.id.card2);
+        FatCalculator = view.findViewById(R.id.card10);
 
         proteinCalculator.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -47,6 +48,7 @@ public class dashboard extends Fragment {
                 startActivity(intent);
             }
         });
+
 
         return view;
     }
