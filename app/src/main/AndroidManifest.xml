@@ -30,8 +30,10 @@
         android:largeHeap="true"
         android:roundIcon="@drawable/ic_logo"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme">
-        <activity android:name=".Activities.fatCalculator"></activity>
+        android:theme="@style/AppTheme"
+        android:usesCleartextTraffic="true">
+        <activity android:name=".Activities.bmiCalculator"></activity>
+        <activity android:name=".Activities.fatCalculator" />
         <activity android:name=".Activities.proteinCalculator" />
         <activity android:name=".Activities.homeScreen" />
         <activity android:name=".Activities.Login_signup" />
@@ -48,6 +50,10 @@
         <meta-data
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />
+
+        <meta-data
+            android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version" />
     </application>
 
 </manifest>

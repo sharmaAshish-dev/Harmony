@@ -14,6 +14,7 @@ import androidx.fragment.app.Fragment;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
+import mps.project.harmony.Activities.homeScreen;
 import mps.project.harmony.R;
 
 public class login_page extends Fragment {
@@ -35,6 +36,8 @@ public class login_page extends Fragment {
         FirebaseUser currentUser = mAuth.getCurrentUser();
         if (currentUser != null) {
             updateUI(currentUser);
+        } else {
+
         }
     }
 
@@ -89,7 +92,7 @@ public class login_page extends Fragment {
     }
 
     private void updateUI(FirebaseUser firebaseUser) {
-        Intent alreadySignedIn = new Intent(requireContext(), dashboard.class);
+        Intent alreadySignedIn = new Intent(requireContext(), homeScreen.class);
         alreadySignedIn.putExtra("user", firebaseUser);
         startActivity(alreadySignedIn);
         requireActivity().finish();
