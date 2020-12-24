@@ -32,26 +32,44 @@ dependencies {
     implementation 'androidx.appcompat:appcompat:1.2.0'
     implementation 'androidx.constraintlayout:constraintlayout:2.0.4'
     implementation 'androidx.coordinatorlayout:coordinatorlayout:1.1.0'
+
+    // new Android designing library
     implementation 'com.google.android.material:material:1.2.1'
     implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+
+    // Firebase Authentication library
     implementation 'com.google.firebase:firebase-auth:20.0.1'
+
+    // Firebase Database Access Library
     implementation 'com.google.firebase:firebase-database:19.5.1'
+
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
 
-    //consume library
+    // Liquid Viewpager Swipe library
     implementation 'com.cuberto:liquid-swipe:1.0.0'
 
     implementation 'com.google.android.material:material:1.2.1'
+
+    // For using Kotlin libraries
     implementation 'org.jetbrains.kotlin:kotlin-stdlib:1.3.70'
     implementation 'androidx.core:core:1.3.1'
     implementation 'androidx.core:core-ktx:1.3.1'
 
+    // For using Lottie Animations
     implementation "com.airbnb.android:lottie:3.4.0"
 
+    // Circular progress bar
     implementation 'com.budiyev.android:circular-progress-bar:1.2.2'
+
+    // Button Navigation bar
     implementation 'com.ismaeldivita.chipnavigation:chip-navigation-bar:1.2.0'
+
+    // Customized Seekbar
     implementation 'com.github.warkiz.widget:indicatorseekbar:2.1.2'
+
+    // Circular image holder
+    implementation 'de.hdodenhof:circleimageview:3.1.0'
 
 }

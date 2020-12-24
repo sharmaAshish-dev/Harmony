@@ -25,30 +25,22 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
-            <androidx.cardview.widget.CardView
-                android:id="@+id/userImageCard"
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/userImage"
                 android:layout_width="80dp"
                 android:layout_height="80dp"
                 android:layout_marginStart="40dp"
                 android:layout_marginTop="40dp"
                 android:layout_marginBottom="20dp"
-                app:cardCornerRadius="40dp">
-
-                <ImageView
-                    android:id="@+id/userImage"
-                    android:layout_width="80dp"
-                    android:layout_height="80dp"
-                    android:scaleType="centerCrop"
-                    android:src="@drawable/male" />
-
-            </androidx.cardview.widget.CardView>
-
+                android:src="@drawable/male"
+                app:civ_border_color="#FFFFFFFF"
+                app:civ_border_width="2dp" />
 
             <TextView
                 android:id="@+id/date"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/userImageCard"
+                android:layout_below="@+id/userImage"
                 android:layout_alignParentStart="true"
                 android:layout_alignParentEnd="true"
                 android:layout_marginStart="40dp"
@@ -77,10 +69,10 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:baselineAligned="false"
-                android:orientation="horizontal"
                 android:layout_below="@+id/greeting"
                 android:layout_marginBottom="40sp"
+                android:baselineAligned="false"
+                android:orientation="horizontal"
                 android:weightSum="100">
 
                 <RelativeLayout
