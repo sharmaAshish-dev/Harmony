@@ -28,7 +28,7 @@ import mps.project.harmony.R;
 public class dashboard extends Fragment {
 
     String name;
-    private RelativeLayout proteinCalculator, heartRateScanner, FatCalculator, bmiCalculator;
+    private RelativeLayout proteinCalculator, heartRateScanner, FatCalculator, bmiCalculator, drinkWater;
     private TextView userName;
     private TextView todayDate;
     private String currentDate;
@@ -58,6 +58,7 @@ public class dashboard extends Fragment {
         heartRateScanner = view.findViewById(R.id.card2);
         FatCalculator = view.findViewById(R.id.card10);
         bmiCalculator = view.findViewById(R.id.card7);
+        drinkWater = view.findViewById(R.id.card6);
 
         SimpleDateFormat formatter = new SimpleDateFormat("MMMM d,YYYY");
         Date date = new Date();
@@ -104,6 +105,16 @@ public class dashboard extends Fragment {
             }
         });
 
+        drinkWater.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getActivity(), mps.project.harmony.Activities.drinkWater.class);
+                startActivity(intent);
+            }
+        });
+
         return view;
     }
+
+
 }

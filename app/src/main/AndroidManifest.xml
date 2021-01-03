@@ -8,8 +8,7 @@
     <uses-permission android:name="android.hardware.sensor.stepcounter" />
     <uses-permission android:name="android.hardware.sensor.stepdetector" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
-    <!-- permission required to use Alarm Manager -->
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" /> <!-- permission required to use Alarm Manager -->
     <uses-permission android:name="com.android.alarm.permission.SET_ALARM" />
 
     <uses-feature
@@ -33,7 +32,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".Activities.DrinkWater"></activity>
+        <activity android:name=".Activities.drinkWater"></activity>
         <activity android:name=".Activities.bmiCalculator" />
         <activity android:name=".Activities.fatCalculator" />
         <activity android:name=".Activities.proteinCalculator" />
@@ -55,9 +54,6 @@
         <meta-data
             android:name="com.google.android.gms.version"
             android:value="@integer/google_play_services_version" />
-
-        <!-- Register the Alarm Receiver -->
-        <receiver android:name=".Services.NoteService" />
     </application>
 
 </manifest>

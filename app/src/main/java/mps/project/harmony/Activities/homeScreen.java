@@ -1,10 +1,10 @@
 package mps.project.harmony.Activities;
 
+import android.os.Bundle;
+
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
-
-import android.os.Bundle;
 
 import com.ismaeldivita.chipnavigation.ChipNavigationBar;
 
@@ -17,7 +17,6 @@ public class homeScreen extends AppCompatActivity {
 
     ChipNavigationBar buttomNavBar;
     FragmentManager fragmentManager;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -63,5 +62,10 @@ public class homeScreen extends AppCompatActivity {
 
             }
         });
+    }
+
+    @Override
+    public void onBackPressed() {
+
     }
 }

@@ -4,10 +4,10 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.RadioButton;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.cardview.widget.CardView;
 
 import mps.project.harmony.R;
 
@@ -15,10 +15,11 @@ public class proteinCalculator extends AppCompatActivity {
 
     private com.warkiz.widget.IndicatorSeekBar userWeight;
     private ImageView increaseWeight, decreaseWeight;
-    private CardView calculateBtn;
+    private RelativeLayout calculateBtn;
     private RadioButton ft1, ft2, ft3, ft4, ft5;
     private double userFitnessLevel = 0;
     private TextView proteinRequired;
+    private TextView maleCheckBox, femaleCheckBox;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,11 +34,37 @@ public class proteinCalculator extends AppCompatActivity {
         ft4 = findViewById(R.id.radioBtn4);
         ft5 = findViewById(R.id.radioBtn5);
 
+        maleCheckBox = findViewById(R.id.maleCheckBox);
+        femaleCheckBox = findViewById(R.id.femaleCheckBox);
+
         increaseWeight = findViewById(R.id.addWeight);
         decreaseWeight = findViewById(R.id.subtractWeight);
 
         calculateBtn = findViewById(R.id.calculateProteinBtn);
         proteinRequired = findViewById(R.id.proteinIntake);
+
+        maleCheckBox.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                maleCheckBox.setBackgroundResource(R.drawable.checkbox_selected_state);
+                femaleCheckBox.setBackgroundResource(R.drawable.checkbox_normal_state);
+
+                maleCheckBox.setTextColor(getResources().getColor(R.color.logoColorWhite));
+                femaleCheckBox.setTextColor(getResources().getColor(R.color.logoColorBlack));
+
+            }
+        });
+
+        femaleCheckBox.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                femaleCheckBox.setBackgroundResource(R.drawable.checkbox_selected_state);
+                maleCheckBox.setBackgroundResource(R.drawable.checkbox_normal_state);
+
+                femaleCheckBox.setTextColor(getResources().getColor(R.color.logoColorWhite));
+                maleCheckBox.setTextColor(getResources().getColor(R.color.logoColorBlack));
+            }
+        });
 
         increaseWeight.setOnClickListener(new View.OnClickListener() {
             @Override
