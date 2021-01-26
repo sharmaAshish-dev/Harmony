@@ -6,6 +6,10 @@
     android:background="@color/logoColorDarkCyan"
     tools:context=".Fragments.signUpPage">
 
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -23,7 +27,7 @@
                 android:weightSum="100">
 
                 <TextView
-                    android:layout_width="wrap_content"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="100"
                     android:fontFamily="sans-serif-medium"
@@ -39,142 +43,271 @@
 
             </LinearLayout>
 
-            <ScrollView
+            <RelativeLayout
+                android:id="@+id/inputFields"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/header"
-                android:scrollbars="none"
-                android:layout_alignParentStart="true"
-                android:layout_alignParentEnd="true">
+                android:layout_marginTop="30dp"
+                android:layout_marginBottom="40dp"
+                android:background="@drawable/round_edge_card"
+                android:padding="20sp">
 
-                <RelativeLayout
-                    android:id="@+id/inputFields"
+                <TextView
+                    android:id="@+id/txtName"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="30dp"
-                    android:layout_marginBottom="40dp"
-                    android:background="@drawable/round_edge_card"
-                    android:padding="20sp">
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentEnd="true"
+                    android:text="Name"
+                    android:textColor="@color/logoColorDarkCyan"
+                    android:textStyle="bold" />
 
-                    <TextView
-                        android:id="@+id/txtName"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_alignParentStart="true"
-                        android:layout_alignParentEnd="true"
-                        android:text="Name"
-                        android:textColor="@color/logoColorDarkCyan"
-                        android:textStyle="bold" />
+                <EditText
+                    android:id="@+id/userName"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/txtName"
+                    android:background="@color/logoColorWhite"
+                    android:hint="Enter Name"
+                    android:inputType="textEmailAddress"
+                    android:paddingTop="20sp"
+                    android:paddingEnd="20sp"
+                    android:paddingBottom="10dp"
+                    android:textColor="@color/logoColorBlack"
+                    android:textSize="18sp" />
 
-                    <EditText
-                        android:id="@+id/userName"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_below="@+id/txtName"
-                        android:background="@color/logoColorWhite"
-                        android:hint="Enter Name"
-                        android:inputType="textEmailAddress"
-                        android:paddingTop="20sp"
-                        android:paddingEnd="20sp"
-                        android:paddingBottom="10dp"
-                        android:textColor="@color/logoColorBlack"
-                        android:textSize="18sp" />
+                <View
+                    android:id="@+id/seperator1"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_below="@+id/userName"
+                    android:background="@color/logoColorDarkCyan"
+                    android:backgroundTint="@color/logoColorDarkCyan" />
 
-                    <View
-                        android:id="@+id/seperator1"
-                        android:layout_width="match_parent"
-                        android:layout_height="1dp"
-                        android:layout_below="@+id/userName"
-                        android:background="@color/logoColorDarkCyan"
-                        android:backgroundTint="@color/logoColorDarkCyan" />
+                <TextView
+                    android:id="@+id/txtEmail"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/seperator1"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginTop="20sp"
+                    android:text="Email"
+                    android:textColor="@color/logoColorDarkCyan"
+                    android:textStyle="bold" />
 
-                    <TextView
-                        android:id="@+id/txtEmail"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_alignParentStart="true"
-                        android:layout_alignParentEnd="true"
-                        android:text="Email"
-                        android:layout_marginTop="20sp"
-                        android:layout_below="@+id/seperator1"
-                        android:textColor="@color/logoColorDarkCyan"
-                        android:textStyle="bold" />
+                <EditText
+                    android:id="@+id/userEmail"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/txtEmail"
+                    android:background="@color/logoColorWhite"
+                    android:hint="Enter Email Address"
+                    android:inputType="textEmailAddress"
+                    android:paddingTop="20sp"
+                    android:paddingEnd="20sp"
+                    android:paddingBottom="10dp"
+                    android:textColor="@color/logoColorBlack"
+                    android:textSize="18sp" />
 
-                    <EditText
-                        android:id="@+id/userEmail"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_below="@+id/txtEmail"
-                        android:background="@color/logoColorWhite"
-                        android:hint="Enter Email Address"
-                        android:inputType="textEmailAddress"
-                        android:paddingTop="20sp"
-                        android:paddingEnd="20sp"
-                        android:paddingBottom="10dp"
-                        android:textColor="@color/logoColorBlack"
-                        android:textSize="18sp" />
+                <View
+                    android:id="@+id/seperator3"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_below="@+id/userEmail"
+                    android:background="@color/logoColorDarkCyan"
+                    android:backgroundTint="@color/logoColorDarkCyan" />
 
-                    <View
-                        android:id="@+id/seperator3"
-                        android:layout_width="match_parent"
-                        android:layout_height="1dp"
-                        android:layout_below="@+id/userEmail"
-                        android:background="@color/logoColorDarkCyan"
-                        android:backgroundTint="@color/logoColorDarkCyan" />
+                <TextView
+                    android:id="@+id/txtPassword"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/seperator3"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginTop="20sp"
+                    android:text="Password"
+                    android:textColor="@color/logoColorDarkCyan"
+                    android:textStyle="bold" />
 
-                    <TextView
-                        android:id="@+id/txtPassword"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_below="@+id/seperator3"
-                        android:layout_alignParentStart="true"
-                        android:layout_alignParentEnd="true"
-                        android:layout_marginTop="20sp"
-                        android:text="Password"
-                        android:textColor="@color/logoColorDarkCyan"
-                        android:textStyle="bold" />
+                <EditText
+                    android:id="@+id/userPassword"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/txtPassword"
+                    android:background="@color/logoColorWhite"
+                    android:hint="Enter Password"
+                    android:inputType="textPassword"
+                    android:paddingTop="20sp"
+                    android:paddingEnd="10dp"
+                    android:paddingBottom="10dp"
+                    android:textColor="@color/logoColorBlack"
+                    android:textSize="18sp" />
 
-                    <EditText
-                        android:id="@+id/userPassword"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_below="@+id/txtPassword"
-                        android:background="@color/logoColorWhite"
-                        android:hint="Enter Password"
-                        android:inputType="textPassword"
-                        android:paddingTop="20sp"
-                        android:paddingEnd="10dp"
-                        android:paddingBottom="10dp"
-                        android:textColor="@color/logoColorBlack"
-                        android:textSize="18sp" />
+                <View
+                    android:id="@+id/seperator5"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_below="@+id/userPassword"
+                    android:background="@color/logoColorDarkCyan"
+                    android:backgroundTint="@color/logoColorDarkCyan" />
 
-                    <View
-                        android:id="@+id/seperator5"
-                        android:layout_width="match_parent"
-                        android:layout_height="1dp"
-                        android:layout_below="@+id/userPassword"
-                        android:background="@color/logoColorDarkCyan"
-                        android:backgroundTint="@color/logoColorDarkCyan" />
+                <TextView
+                    android:id="@+id/txtAge"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/seperator5"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginTop="20sp"
+                    android:text="Age"
+                    android:textColor="@color/logoColorDarkCyan"
+                    android:textStyle="bold" />
 
-                    <TextView
-                        android:id="@+id/loginBtn"
-                        android:layout_width="260dp"
-                        android:layout_height="wrap_content"
-                        android:layout_below="@+id/seperator5"
-                        android:layout_centerHorizontal="true"
-                        android:layout_marginTop="30sp"
-                        android:layout_marginBottom="20sp"
-                        android:background="@drawable/button_background_blue"
-                        android:gravity="center"
-                        android:padding="10dp"
-                        android:text="Sign up"
-                        android:textColor="@color/logoColorWhite"
-                        android:textSize="20sp" />
+                <EditText
+                    android:id="@+id/userAge"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/txtAge"
+                    android:background="@color/logoColorWhite"
+                    android:hint="Enter Age (year)"
+                    android:inputType="text"
+                    android:paddingTop="20sp"
+                    android:paddingEnd="10dp"
+                    android:paddingBottom="10dp"
+                    android:textColor="@color/logoColorBlack"
+                    android:textSize="18sp" />
 
-                </RelativeLayout>
+                <View
+                    android:id="@+id/seperator6"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_below="@+id/userAge"
+                    android:background="@color/logoColorDarkCyan"
+                    android:backgroundTint="@color/logoColorDarkCyan" />
 
-            </ScrollView>
+                <TextView
+                    android:id="@+id/txtWeight"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/seperator6"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginTop="20sp"
+                    android:text="Weight"
+                    android:textColor="@color/logoColorDarkCyan"
+                    android:textStyle="bold" />
+
+                <EditText
+                    android:id="@+id/userWeight"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/txtWeight"
+                    android:background="@color/logoColorWhite"
+                    android:hint="Enter Weight (kg)"
+                    android:inputType="text"
+                    android:paddingTop="20sp"
+                    android:paddingEnd="10dp"
+                    android:paddingBottom="10dp"
+                    android:textColor="@color/logoColorBlack"
+                    android:textSize="18sp" />
+
+                <View
+                    android:id="@+id/seperator7"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_below="@+id/userWeight"
+                    android:background="@color/logoColorDarkCyan"
+                    android:backgroundTint="@color/logoColorDarkCyan" />
+
+                <TextView
+                    android:id="@+id/txtHeight"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/seperator7"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginTop="20sp"
+                    android:text="Weight"
+                    android:textColor="@color/logoColorDarkCyan"
+                    android:textStyle="bold" />
+
+                <EditText
+                    android:id="@+id/userHeight"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/txtHeight"
+                    android:background="@color/logoColorWhite"
+                    android:hint="Enter Height (cm)"
+                    android:inputType="text"
+                    android:paddingTop="20sp"
+                    android:paddingEnd="10dp"
+                    android:paddingBottom="10dp"
+                    android:textColor="@color/logoColorBlack"
+                    android:textSize="18sp" />
+
+                <View
+                    android:id="@+id/seperator8"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_below="@+id/userHeight"
+                    android:background="@color/logoColorDarkCyan"
+                    android:backgroundTint="@color/logoColorDarkCyan" />
+
+                <TextView
+                    android:id="@+id/txtBloodG"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/seperator8"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginTop="20sp"
+                    android:text="Blood Group"
+                    android:textColor="@color/logoColorDarkCyan"
+                    android:textStyle="bold" />
+
+                <EditText
+                    android:id="@+id/userBloodGroup"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/txtBloodG"
+                    android:background="@color/logoColorWhite"
+                    android:hint="Enter Blood Group"
+                    android:inputType="text"
+                    android:paddingTop="20sp"
+                    android:paddingEnd="10dp"
+                    android:paddingBottom="10dp"
+                    android:textColor="@color/logoColorBlack"
+                    android:textSize="18sp" />
+
+                <View
+                    android:id="@+id/seperator9"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_below="@+id/userBloodGroup"
+                    android:background="@color/logoColorDarkCyan"
+                    android:backgroundTint="@color/logoColorDarkCyan" />
+
+                <TextView
+                    android:id="@+id/loginBtn"
+                    android:layout_width="260dp"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/seperator9"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="30sp"
+                    android:layout_marginBottom="20sp"
+                    android:background="@drawable/button_background_blue"
+                    android:gravity="center"
+                    android:padding="10dp"
+                    android:text="Sign up"
+                    android:textColor="@color/logoColorWhite"
+                    android:textSize="20sp" />
+
+            </RelativeLayout>
 
         </RelativeLayout>
+
+    </ScrollView>
 
 </RelativeLayout>

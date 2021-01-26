@@ -1,5 +1,6 @@
 package mps.project.harmony.Activities;
 
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
@@ -22,6 +23,9 @@ public class bmiCalculator extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_bmi_calculator);
+
+        SharedPreferences sharedPreferences = getSharedPreferences("user_data", MODE_PRIVATE);
+        SharedPreferences.Editor editor = sharedPreferences.edit();
 
         userHeight = findViewById(R.id.heightSeeker);
         userWeight = findViewById(R.id.weightBar);
@@ -83,6 +87,9 @@ public class bmiCalculator extends AppCompatActivity {
                 double heightInMetre = userHeight.getProgressFloat() / 100;
                 int bmiNumber = (int) (userWeight.getProgressFloat() / heightInMetre / heightInMetre);
                 bmiScore.setText(String.valueOf(bmiNumber));
+
+                editor.putString("bmi", String.valueOf(bmiNumber));
+                editor.apply();
 
                 if (bmiNumber > 0 && bmiNumber <= 16) {
                     bmiScoreRemark.setText("Severely Underweight");

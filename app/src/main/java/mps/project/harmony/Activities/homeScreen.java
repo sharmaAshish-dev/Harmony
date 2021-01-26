@@ -10,7 +10,6 @@ import com.ismaeldivita.chipnavigation.ChipNavigationBar;
 
 import mps.project.harmony.Fragments.dashboard;
 import mps.project.harmony.Fragments.profile;
-import mps.project.harmony.Fragments.settings;
 import mps.project.harmony.R;
 
 public class homeScreen extends AppCompatActivity {
@@ -46,9 +45,6 @@ public class homeScreen extends AppCompatActivity {
                         break;
                     case R.id.profile:
                         fragment = new profile();
-                        break;
-                    case R.id.settings:
-                        fragment = new settings();
                         break;
                     default:
                         fragment = new dashboard();

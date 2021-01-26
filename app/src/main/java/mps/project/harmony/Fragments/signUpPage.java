@@ -2,7 +2,9 @@ package mps.project.harmony.Fragments;
 
 import android.app.ProgressDialog;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.os.Handler;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -23,10 +25,12 @@ import mps.project.harmony.Activities.homeScreen;
 import mps.project.harmony.Models.User;
 import mps.project.harmony.R;
 
+import static android.content.Context.MODE_PRIVATE;
+
 public class signUpPage extends Fragment {
 
     private FirebaseAuth mAuth;
-    private EditText uName, uEmail, uPassword;
+    private EditText uName, uEmail, uPassword, uAge, uWeight, uHeight, uBlood;
     private ProgressDialog progressDialog;
     private TextView signupBtn;
 
@@ -52,35 +56,43 @@ public class signUpPage extends Fragment {
         uName = view.findViewById(R.id.userName);
         uEmail = view.findViewById(R.id.userEmail);
         uPassword = view.findViewById(R.id.userPassword);
+        uAge = view.findViewById(R.id.userAge);
+        uWeight = view.findViewById(R.id.userWeight);
+        uHeight = view.findViewById(R.id.userHeight);
+        uBlood = view.findViewById(R.id.userBloodGroup);
+
         signupBtn = view.findViewById(R.id.loginBtn);
 
-        signupBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                if (uName.getText().toString().equals("") || uEmail.getText().toString().equals("") || uPassword.getText().toString().equals("")) {
-                    Toast.makeText(requireContext(), "Please Fill all details", Toast.LENGTH_SHORT).show();
+        signupBtn.setOnClickListener(view1 -> {
+            if (uName.getText().toString().equals("") || uEmail.getText().toString().equals("") || uPassword.getText().toString().equals("") ||
+                    uAge.getText().toString().equals("") || uWeight.getText().toString().equals("") || uHeight.getText().toString().equals("") ||
+                    uBlood.getText().toString().equals("")) {
+                Toast.makeText(requireContext(), "Please Fill all details", Toast.LENGTH_SHORT).show();
+            } else {
+                if (!uEmail.getText().toString().contains("@")) {
+                    Toast.makeText(requireContext(), "Please Enter Valid Email ID", Toast.LENGTH_SHORT).show();
                 } else {
-                    if (!uEmail.getText().toString().contains("@")) {
-                        Toast.makeText(requireContext(), "Please Enter Valid Email ID", Toast.LENGTH_SHORT).show();
+
+                    if (uPassword.getText().toString().length() < 6) {
+                        Toast.makeText(requireContext(), "Password length should be more than 8", Toast.LENGTH_SHORT).show();
                     } else {
+                        progressDialog = new ProgressDialog(requireContext());
+                        progressDialog.setMessage("Please wait");
+                        progressDialog.show();
 
-                        if (uPassword.getText().toString().length() < 6) {
-                            Toast.makeText(requireContext(), "Password length should be more than 8", Toast.LENGTH_SHORT).show();
-                        } else {
-                            progressDialog = new ProgressDialog(requireContext());
-                            progressDialog.setMessage("Please wait");
-                            progressDialog.show();
+                        String userName = uName.getText().toString();
+                        String userEmail = uEmail.getText().toString();
+                        String userPassword = uPassword.getText().toString();
+                        String age = uAge.getText().toString();
+                        String weight = uWeight.getText().toString();
+                        String height = uHeight.getText().toString();
+                        String blood = uBlood.getText().toString();
 
-                            String userName = uName.getText().toString();
-                            String userEmail = uEmail.getText().toString();
-                            String userPassword = uPassword.getText().toString();
-
-                            registerUser(userName, userEmail, userPassword);
-                        }
-
+                        registerUser(userName, userEmail, userPassword, age, weight, height, blood);
                     }
 
                 }
+
             }
         });
 
@@ -88,20 +100,30 @@ public class signUpPage extends Fragment {
 
     }
 
-    private void registerUser(String displayName, String Email, String password) {
+    private void registerUser(String displayName, String Email, String password, String age, String weight, String height, String blood) {
 
         mAuth.createUserWithEmailAndPassword(Email, password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
                 if (task.isSuccessful()) {
 
-                    progressDialog.dismiss();
 
-                    User user = new User(displayName, Email, password);
+                    User user = new User(displayName, Email, password, age, weight, height, blood);
 
-                    FirebaseDatabase.getInstance().getReference("Users")
+                    FirebaseDatabase.getInstance().getReference("users")
                             .child(FirebaseAuth.getInstance().getCurrentUser().getUid())
                             .setValue(user);
+
+                    SharedPreferences sharedPreferences = getActivity().getSharedPreferences("user_details", MODE_PRIVATE);
+                    SharedPreferences.Editor editor = sharedPreferences.edit();
+                    editor.putString("name", displayName);
+                    editor.putString("email", Email);
+                    editor.putString("password", password);
+                    editor.putString("age", age);
+                    editor.putString("weight", weight);
+                    editor.putString("height", height);
+                    editor.putString("blood", blood);
+                    editor.apply();
 
                     updateUI();
 
@@ -115,9 +137,20 @@ public class signUpPage extends Fragment {
     }
 
     private void updateUI() {
-        Intent signedIn = new Intent(requireContext(), homeScreen.class);
-        startActivity(signedIn);
-        requireActivity().finish();
+
+        new Handler().postDelayed(new Runnable() {
+            @Override
+            public void run() {
+
+                progressDialog.dismiss();
+
+                Intent signedIn = new Intent(requireContext(), homeScreen.class);
+                startActivity(signedIn);
+                requireActivity().finish();
+            }
+        }, 2000);
+
+
     }
 
 }

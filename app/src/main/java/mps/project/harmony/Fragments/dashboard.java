@@ -1,6 +1,7 @@
 package mps.project.harmony.Fragments;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -8,40 +9,30 @@ import android.view.ViewGroup;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
-import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
-
-import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseError;
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.ValueEventListener;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
 import mps.project.harmony.Activities.HeartMeter;
+import mps.project.harmony.Activities.fatCalculator;
 import mps.project.harmony.Activities.proteinCalculator;
 import mps.project.harmony.R;
+
+import static android.content.Context.MODE_PRIVATE;
 
 public class dashboard extends Fragment {
 
     String name;
-    private RelativeLayout proteinCalculator, heartRateScanner, FatCalculator, bmiCalculator, drinkWater;
+    private RelativeLayout calorieCounter, proteinCalculator, heartRateScanner, FatCalculator, bmiCalculator, drinkWater;
     private TextView userName;
     private TextView todayDate;
     private String currentDate;
+    private TextView dailyProteinReq, bpm, bmi, fatPercentage;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
-        //TODO Fix app crashes when user opens app without login (pre logged state)
-        //TODO Fix app crashes when user is logged from signup page
-        //TODO Remove liquid swipe from login page and add normal activities with transition(0,0) for both entry and exit
-        //TODO Create a check on splash for smooth data flow of user details
-        //TODO Create a check on splash to check if user is logged in and if it is then fetch its data at the time of app start for smooth app performance
 
     }
 
@@ -51,14 +42,23 @@ public class dashboard extends Fragment {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_dashboard, container, false);
 
+        final SharedPreferences getShared = requireActivity().getSharedPreferences("user_details", MODE_PRIVATE);         //saved preference of user Details from login
+        final SharedPreferences data = requireActivity().getSharedPreferences("user_data", MODE_PRIVATE);         //saved preference of user Details from login
+
         userName = view.findViewById(R.id.greeting);
         todayDate = view.findViewById(R.id.date);
 
-        proteinCalculator = view.findViewById(R.id.card3);
+        calorieCounter = view.findViewById(R.id.card1);
         heartRateScanner = view.findViewById(R.id.card2);
-        FatCalculator = view.findViewById(R.id.card10);
-        bmiCalculator = view.findViewById(R.id.card7);
+        proteinCalculator = view.findViewById(R.id.card3);
         drinkWater = view.findViewById(R.id.card6);
+        bmiCalculator = view.findViewById(R.id.card7);
+        FatCalculator = view.findViewById(R.id.card10);
+
+        dailyProteinReq = view.findViewById(R.id.dailyProteinReq);
+        bpm = view.findViewById(R.id.bpm);
+        bmi = view.findViewById(R.id.bmi);
+        fatPercentage = view.findViewById(R.id.fatPercentage);
 
         SimpleDateFormat formatter = new SimpleDateFormat("MMMM d,YYYY");
         Date date = new Date();
@@ -66,18 +66,22 @@ public class dashboard extends Fragment {
 
         todayDate.setText(currentDate);
 
-        DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReference("users");
+        if (getShared.getString("name", "Invalid").equals("")) {
+            userName.setText("Invalid");
+        } else {
+            userName.setText(getShared.getString("name", "Invalid"));
+        }
 
-        databaseReference.addListenerForSingleValueEvent(new ValueEventListener() {
+        dailyProteinReq.setText(data.getString("protein", "0"));
+        bpm.setText(data.getString("heartRate", "0"));
+        bmi.setText(data.getString("bmi", "0"));
+        fatPercentage.setText(data.getString("fat", "0"));
+
+        calorieCounter.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onDataChange(@NonNull DataSnapshot snapshot) {
-                name = snapshot.child(FirebaseAuth.getInstance().getUid()).child("name").getValue().toString();
-                userName.append(name);
-            }
-
-            @Override
-            public void onCancelled(@NonNull DatabaseError error) {
-
+            public void onClick(View view) {
+                Intent intent = new Intent(getActivity(), proteinCalculator.class);
+                startActivity(intent);
             }
         });
 
@@ -109,6 +113,14 @@ public class dashboard extends Fragment {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(getActivity(), mps.project.harmony.Activities.drinkWater.class);
+                startActivity(intent);
+            }
+        });
+
+        FatCalculator.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getActivity(), fatCalculator.class);
                 startActivity(intent);
             }
         });

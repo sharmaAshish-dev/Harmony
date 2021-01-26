@@ -10,8 +10,10 @@
     <View
         android:layout_width="match_parent"
         android:layout_height="250dp"
-        android:background="@color/logoColorPurple"
+        android:background="@drawable/ic_profile_card"
         android:elevation="1dp"
+        android:scaleX="1.12"
+        android:scaleY="1.2"
         android:outlineProvider="bounds" />
 
     <ScrollView
@@ -27,11 +29,12 @@
 
             <de.hdodenhof.circleimageview.CircleImageView
                 android:id="@+id/userImage"
-                android:layout_width="80dp"
-                android:layout_height="80dp"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_centerHorizontal="true"
                 android:layout_marginStart="40dp"
                 android:layout_marginTop="40dp"
-                android:layout_marginBottom="20dp"
+                android:layout_marginBottom="10dp"
                 android:src="@drawable/male"
                 app:civ_border_color="#FFFFFFFF"
                 app:civ_border_width="2dp" />
@@ -47,8 +50,8 @@
                 android:layout_marginEnd="40dp"
                 android:elevation="1dp"
                 android:fontFamily="@font/nunito"
-                android:text="April 24, 2020"
-                android:textColor="@color/logoColorSkyBlue" />
+                android:text="january 12, 2021"
+                android:textColor="@color/logoColorWhite" />
 
             <TextView
                 android:id="@+id/greeting"
@@ -239,69 +242,10 @@
                     </RelativeLayout>
 
                     <RelativeLayout
-                        android:id="@+id/card3"
-                        android:layout_width="match_parent"
-                        android:layout_height="120dp"
-                        android:layout_below="@+id/card2"
-                        android:layout_marginStart="15dp"
-                        android:layout_marginTop="15dp"
-                        android:layout_marginEnd="8dp"
-                        android:background="@drawable/dashboard_card"
-                        android:backgroundTint="@color/logoColorOrange"
-                        android:elevation="8dp">
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:orientation="vertical"
-                            android:weightSum="100">
-
-                            <TextView
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_marginTop="20sp"
-                                android:layout_weight="40"
-                                android:paddingStart="20sp"
-                                android:text="Protein 🥚"
-                                android:textColor="@color/logoColorWhite"
-                                android:textSize="20sp"
-                                android:textStyle="bold" />
-
-                            <RelativeLayout
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_marginTop="8dp"
-                                android:paddingStart="20sp"
-                                android:paddingEnd="20sp">
-
-                                <TextView
-                                    android:id="@+id/dailyProteinReq"
-                                    android:layout_width="match_parent"
-                                    android:layout_height="wrap_content"
-                                    android:fontFamily="@font/nunito_bold"
-                                    android:text="2"
-                                    android:textColor="@color/logoColorWhite"
-                                    android:textSize="18sp" />
-
-                                <TextView
-                                    android:id="@+id/ProteinReqUnit"
-                                    android:layout_width="match_parent"
-                                    android:layout_height="wrap_content"
-                                    android:layout_below="@+id/dailyProteinReq"
-                                    android:text="grams"
-                                    android:textStyle="bold" />
-
-                            </RelativeLayout>
-
-                        </LinearLayout>
-
-                    </RelativeLayout>
-
-                    <RelativeLayout
                         android:id="@+id/card7"
                         android:layout_width="match_parent"
                         android:layout_height="220dp"
-                        android:layout_below="@+id/card3"
+                        android:layout_below="@+id/card2"
                         android:layout_marginStart="15dp"
                         android:layout_marginTop="15dp"
                         android:layout_marginEnd="8dp"
@@ -432,13 +376,14 @@
                     android:elevation="12dp">
 
                     <RelativeLayout
-                        android:id="@+id/card4"
+                        android:id="@+id/card3"
                         android:layout_width="match_parent"
                         android:layout_height="120dp"
                         android:layout_marginStart="8dp"
                         android:layout_marginTop="15dp"
                         android:layout_marginEnd="15dp"
                         android:background="@drawable/dashboard_card"
+                        android:backgroundTint="@color/logoColorOrange"
                         android:elevation="8dp">
 
                         <LinearLayout
@@ -453,8 +398,8 @@
                                 android:layout_marginTop="20sp"
                                 android:layout_weight="40"
                                 android:paddingStart="20sp"
-                                android:text="Sleep   🌚"
-                                android:textColor="@color/logoColorBlack"
+                                android:text="Protein 🥚"
+                                android:textColor="@color/logoColorWhite"
                                 android:textSize="20sp"
                                 android:textStyle="bold" />
 
@@ -466,20 +411,20 @@
                                 android:paddingEnd="20sp">
 
                                 <TextView
-                                    android:id="@+id/sleepTime"
+                                    android:id="@+id/dailyProteinReq"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
                                     android:fontFamily="@font/nunito_bold"
                                     android:text="2"
-                                    android:textColor="@color/logoColorBlack"
+                                    android:textColor="@color/logoColorWhite"
                                     android:textSize="18sp" />
 
                                 <TextView
-                                    android:id="@+id/txtSleepTimeUnit"
+                                    android:id="@+id/ProteinReqUnit"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:layout_below="@+id/sleepTime"
-                                    android:text="Hours"
+                                    android:layout_below="@+id/dailyProteinReq"
+                                    android:text="grams"
                                     android:textStyle="bold" />
 
                             </RelativeLayout>
@@ -492,7 +437,7 @@
                         android:id="@+id/card5"
                         android:layout_width="match_parent"
                         android:layout_height="220dp"
-                        android:layout_below="@+id/card4"
+                        android:layout_below="@+id/card3"
                         android:layout_marginStart="8dp"
                         android:layout_marginTop="15dp"
                         android:layout_marginEnd="15dp"
@@ -642,68 +587,10 @@
                     </RelativeLayout>
 
                     <RelativeLayout
-                        android:id="@+id/card9"
-                        android:layout_width="match_parent"
-                        android:layout_height="120dp"
-                        android:layout_below="@+id/card6"
-                        android:layout_marginStart="8dp"
-                        android:layout_marginTop="15dp"
-                        android:layout_marginEnd="15dp"
-                        android:background="@drawable/dashboard_card"
-                        android:elevation="8dp">
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:orientation="vertical"
-                            android:weightSum="100">
-
-                            <TextView
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_marginTop="20sp"
-                                android:layout_weight="40"
-                                android:paddingStart="20sp"
-                                android:text="Calorie Calc"
-                                android:textColor="@color/logoColorBlack"
-                                android:textSize="20sp"
-                                android:textStyle="bold" />
-
-                            <RelativeLayout
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_marginTop="8dp"
-                                android:paddingStart="20sp"
-                                android:paddingEnd="20sp">
-
-                                <TextView
-                                    android:id="@+id/dailyCalorieReq"
-                                    android:layout_width="match_parent"
-                                    android:layout_height="wrap_content"
-                                    android:fontFamily="@font/nunito_bold"
-                                    android:text="2"
-                                    android:textColor="@color/logoColorBlack"
-                                    android:textSize="18sp" />
-
-                                <TextView
-                                    android:id="@+id/CalorieUnit"
-                                    android:layout_width="match_parent"
-                                    android:layout_height="wrap_content"
-                                    android:layout_below="@+id/dailyCalorieReq"
-                                    android:text="KCal"
-                                    android:textStyle="bold" />
-
-                            </RelativeLayout>
-
-                        </LinearLayout>
-
-                    </RelativeLayout>
-
-                    <RelativeLayout
                         android:id="@+id/card10"
                         android:layout_width="match_parent"
                         android:layout_height="220dp"
-                        android:layout_below="@+id/card9"
+                        android:layout_below="@+id/card6"
                         android:layout_marginStart="15dp"
                         android:layout_marginTop="15dp"
                         android:layout_marginEnd="8dp"

@@ -1,5 +1,6 @@
 package mps.project.harmony.Activities;
 
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
@@ -27,7 +28,9 @@ public class fatCalculator extends AppCompatActivity {
 
     private TextView maleCheckBox, femaleCheckBox;
 
-    private Boolean maleSelected = false;
+    private TextView bodyFatPercentage, fatPercentage, leanMassPercentage;
+
+    private Boolean maleSelected = true;
     private Boolean femaleSelected = false;
 
     @Override
@@ -35,6 +38,12 @@ public class fatCalculator extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_fat_calculator);
 
+        SharedPreferences sharedPreferences = getSharedPreferences("user_data", MODE_PRIVATE);
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+
+        bodyFatPercentage = findViewById(R.id.bFatPercentage);
+        fatPercentage = findViewById(R.id.fMass);
+        leanMassPercentage = findViewById(R.id.lMass);
 
         userAge = findViewById(R.id.age);
         userWeight = findViewById(R.id.weightBar);
@@ -224,7 +233,7 @@ public class fatCalculator extends AppCompatActivity {
 //
 //                LM = Weight - FM
 
-                Double BFP, fatMass, leanMass;
+                Double BFP = 0.0, fatMass = 0.0, leanMass = 0.0;
 
                 if (maleSelected) {
                     BFP = ((495 / (1.0324 + (-0.19077 * log10(userAbdomen.getProgressFloat() - userNeck.getProgressFloat()))) + (0.15456 * log10(userHeight.getProgressFloat())))) - 450;
@@ -245,6 +254,12 @@ public class fatCalculator extends AppCompatActivity {
 
                 }
 
+                bodyFatPercentage.setText(BFP.toString() + "%");
+                fatPercentage.setText(fatMass.toString() + "%");
+                leanMassPercentage.setText(leanMass.toString() + "%");
+
+                editor.putString("fat", BFP.toString() + "%");
+                editor.apply();
 
             }
         });

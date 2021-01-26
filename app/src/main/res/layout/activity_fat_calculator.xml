@@ -33,47 +33,103 @@
         android:layout_marginBottom="20sp"
         android:orientation="vertical">
 
-        <TextView
-            android:id="@+id/bodyFatPercentage"
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginEnd="20sp"
+            android:gravity="center_vertical"
             android:layout_marginStart="20sp"
             android:layout_marginTop="10sp"
-            android:layout_marginEnd="20sp"
-            android:fontFamily="sans-serif-light"
-            android:gravity="start"
-            android:text="Body Fat Percentage:  "
-            android:textColor="@color/logoColorWhite"
-            android:textSize="22sp"
-            android:textStyle="bold" />
+            android:orientation="horizontal">
 
-        <TextView
-            android:id="@+id/fatMass"
+            <TextView
+                android:id="@+id/bodyFatPercentage"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif-light"
+                android:gravity="start"
+                android:text="Body Fat Percentage:   "
+                android:textColor="@color/logoColorWhite"
+                android:textSize="22sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/bFatPercentage"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif-light"
+                android:gravity="start"
+                android:text=""
+                android:textColor="@color/logoColorWhite"
+                android:textSize="22sp"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginEnd="20sp"
             android:layout_marginStart="20sp"
             android:layout_marginTop="20sp"
-            android:layout_marginEnd="20sp"
-            android:fontFamily="sans-serif-light"
-            android:gravity="start"
-            android:text="Fat Mass: "
-            android:textColor="@color/logoColorWhite"
-            android:textSize="22sp"
-            android:textStyle="bold" />
+            android:orientation="horizontal">
 
-        <TextView
-            android:id="@+id/leanMass"
+            <TextView
+                android:id="@+id/fatMass"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif-light"
+                android:gravity="start"
+                android:text="Fat Mass:   "
+                android:textColor="@color/logoColorWhite"
+                android:textSize="22sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/fMass"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif-light"
+                android:gravity="start"
+                android:text=""
+                android:textColor="@color/logoColorWhite"
+                android:textSize="22sp"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginEnd="20sp"
             android:layout_marginStart="20sp"
             android:layout_marginTop="20sp"
-            android:layout_marginEnd="20sp"
-            android:fontFamily="sans-serif-light"
-            android:gravity="start"
-            android:text="Lean Mass: "
-            android:textColor="@color/logoColorWhite"
-            android:textSize="22sp"
-            android:textStyle="bold" />
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/leanMass"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif-light"
+                android:gravity="start"
+                android:text="Lean Mass:   "
+                android:textColor="@color/logoColorWhite"
+                android:textSize="22sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/lMass"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif-light"
+                android:gravity="start"
+                android:text=""
+                android:textColor="@color/logoColorWhite"
+                android:textSize="22sp"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+
 
     </LinearLayout>
 

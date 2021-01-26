@@ -1,5 +1,6 @@
 package mps.project.harmony.Activities;
 
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
@@ -25,6 +26,9 @@ public class proteinCalculator extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_protein_calculator);
+
+        SharedPreferences sharedPreferences = getSharedPreferences("user_data", MODE_PRIVATE);
+        SharedPreferences.Editor editor = sharedPreferences.edit();
 
         userWeight = findViewById(R.id.weightBar);
 
@@ -127,6 +131,9 @@ public class proteinCalculator extends AppCompatActivity {
             public void onClick(View view) {
                 String proteinAmount = String.valueOf((int) (userFitnessLevel * userWeight.getProgressFloat()));
                 proteinRequired.setText(proteinAmount);
+
+                editor.putString("protein", proteinAmount);
+                editor.apply();
 
             }
         });

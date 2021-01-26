@@ -11,9 +11,5 @@
         android:icon="@drawable/ic_profile"
         android:title="Profile"
         app:cnb_iconColor="@color/logoColorPurple" />
-    <item
-        android:id="@+id/settings"
-        android:icon="@drawable/ic_settings"
-        android:title="Settings"
-        app:cnb_iconColor="@color/logoColorPurple" />
+
 </menu>

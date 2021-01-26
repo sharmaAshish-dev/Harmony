@@ -1,9 +1,9 @@
 package mps.project.harmony.Activities;
 
+import android.os.Bundle;
+
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.viewpager.widget.ViewPager;
-
-import android.os.Bundle;
 
 import mps.project.harmony.Adapters.loginSignUpSwitchAdapter;
 import mps.project.harmony.R;
@@ -19,6 +19,7 @@ public class Login_signup extends AppCompatActivity {
         setContentView(R.layout.activity_login_signup);
 
         viewPager = findViewById(R.id.sliderPager);
+        viewPager.setOffscreenPageLimit(1);
 
         pagerAdapter = new loginSignUpSwitchAdapter(getSupportFragmentManager());
 

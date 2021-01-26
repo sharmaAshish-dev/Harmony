@@ -1,14 +1,19 @@
 package mps.project.harmony.Activities;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 
+import androidx.appcompat.app.AppCompatActivity;
+
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+
 import mps.project.harmony.R;
 
 public class splash extends AppCompatActivity {
+
+    FirebaseAuth mAuth;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -16,6 +21,8 @@ public class splash extends AppCompatActivity {
         setContentView(R.layout.activity_splash);
 
         int SPLASH_TIME_OUT = 3000;
+
+        FirebaseUser currentUser = mAuth.getCurrentUser();
 
         new Handler().postDelayed(new Runnable() {
 
@@ -33,22 +40,28 @@ public class splash extends AppCompatActivity {
 //                 If User is already logged in them navigating them directly to Main Dashboard Page
 
                 // else navigating them to Login Page
+                // Check if user is signed in (non-null) and update UI accordingly.
 
+                if (currentUser == null) {
                     Intent dashBoardIntent = new Intent(splash.this, walkThrough.class);
-                    // Starting the next Activity
-//                    Pair[] pairs = new Pair[2];
-//
-//                    pairs[0] = new Pair<View,String>(appLogo,"splashAnimation");
-//                    pairs[1] = new Pair<View,String>(view,"backTint");
-//                    pairs[2] = new Pair<View,String>(userName,"ContactTransition");
 
-//                    ActivityOptions options = ActivityOptions.makeSceneTransitionAnimation(splash.this, pairs);
-//                    startActivity(i,options.toBundle());
+                    startActivity(dashBoardIntent);
 
-                startActivity(dashBoardIntent);
-                overridePendingTransition(R.anim.fade_in,R.anim.fade_out);
-                // closing the activity
-                finish();
+                    overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
+
+                    // closing the activity
+                    finish();
+                } else {
+                    Intent dashBoardIntent = new Intent(splash.this, homeScreen.class);
+
+                    startActivity(dashBoardIntent);
+
+                    overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
+
+                    // closing the activity
+                    finish();
+                }
+
             }
         }, SPLASH_TIME_OUT);        // SPLASH_TIME_OUT = 3 Sec;
     }
