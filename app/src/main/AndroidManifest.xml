@@ -32,7 +32,8 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".Activities.calorieCounter"></activity>
+        <activity android:name=".Activities.pedoMeter"></activity>
+        <activity android:name=".Activities.calorieCounter" />
         <activity android:name=".Activities.drinkWater" />
         <activity android:name=".Activities.bmiCalculator" />
         <activity android:name=".Activities.fatCalculator" />

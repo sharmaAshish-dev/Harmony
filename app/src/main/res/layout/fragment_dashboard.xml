@@ -482,8 +482,8 @@
                                     app:indeterminateMinimumAngle="45"
                                     app:indeterminateRotationAnimationDuration="1200"
                                     app:indeterminateSweepAnimationDuration="600"
-                                    app:maximum="100"
-                                    app:progress="30"
+                                    app:maximum="5000"
+                                    app:progress="1220"
                                     app:progressAnimationDuration="100"
                                     app:startAngle="180" />
 

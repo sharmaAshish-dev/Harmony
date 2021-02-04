@@ -130,9 +130,10 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center"
-                            android:background="null"
+                            android:background="@null"
                             android:fontFamily="@font/nunito"
                             android:hint="2000"
+                            android:elevation="11dp"
                             android:textColor="@color/logoColorDarkCyan"
                             android:textSize="20sp" />
 

@@ -24,11 +24,11 @@ import static android.content.Context.MODE_PRIVATE;
 public class dashboard extends Fragment {
 
     String name;
-    private RelativeLayout calorieCounter, proteinCalculator, heartRateScanner, FatCalculator, bmiCalculator, drinkWater;
+    private RelativeLayout calorieCounter, proteinCalculator, heartRateScanner, FatCalculator, bmiCalculator, drinkWater, pedoMeter;
     private TextView userName;
     private TextView todayDate;
     private String currentDate;
-    private TextView dailyProteinReq, bpm, bmi, fatPercentage;
+    private TextView dailyProteinReq, bpm, bmi, fatPercentage, Calories, walk, water;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -54,11 +54,15 @@ public class dashboard extends Fragment {
         drinkWater = view.findViewById(R.id.card6);
         bmiCalculator = view.findViewById(R.id.card7);
         FatCalculator = view.findViewById(R.id.card10);
+        pedoMeter = view.findViewById(R.id.card5);
 
         dailyProteinReq = view.findViewById(R.id.dailyProteinReq);
         bpm = view.findViewById(R.id.bpm);
         bmi = view.findViewById(R.id.bmi);
         fatPercentage = view.findViewById(R.id.fatPercentage);
+        Calories = view.findViewById(R.id.calories);
+        walk = view.findViewById(R.id.steps);
+        water = view.findViewById(R.id.litre);
 
         SimpleDateFormat formatter = new SimpleDateFormat("MMMM d,YYYY");
         Date date = new Date();
@@ -69,18 +73,21 @@ public class dashboard extends Fragment {
         if (getShared.getString("name", "Invalid").equals("")) {
             userName.setText("Invalid");
         } else {
-            userName.setText(getShared.getString("name", "Invalid"));
+            userName.append(getShared.getString("name", "Invalid"));
         }
 
         dailyProteinReq.setText(data.getString("protein", "0"));
         bpm.setText(data.getString("heartRate", "0"));
         bmi.setText(data.getString("bmi", "0"));
         fatPercentage.setText(data.getString("fat", "0"));
+        Calories.setText(data.getString("calories", "0"));
+        walk.setText(data.getString("walk", "0"));
+        water.setText(data.getString("water", "0"));
 
         calorieCounter.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(getActivity(), proteinCalculator.class);
+                Intent intent = new Intent(getActivity(), mps.project.harmony.Activities.calorieCounter.class);
                 startActivity(intent);
             }
         });
@@ -121,6 +128,14 @@ public class dashboard extends Fragment {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(getActivity(), fatCalculator.class);
+                startActivity(intent);
+            }
+        });
+
+        pedoMeter.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getActivity(), mps.project.harmony.Activities.pedoMeter.class);
                 startActivity(intent);
             }
         });

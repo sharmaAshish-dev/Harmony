@@ -14,6 +14,7 @@ import mps.project.harmony.R;
 public class splash extends AppCompatActivity {
 
     FirebaseAuth mAuth;
+    FirebaseUser currentUser;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,7 +23,7 @@ public class splash extends AppCompatActivity {
 
         int SPLASH_TIME_OUT = 3000;
 
-        FirebaseUser currentUser = mAuth.getCurrentUser();
+//        FirebaseUser currentUser = mAuth.getCurrentUser();
 
         new Handler().postDelayed(new Runnable() {
 
@@ -42,7 +43,7 @@ public class splash extends AppCompatActivity {
                 // else navigating them to Login Page
                 // Check if user is signed in (non-null) and update UI accordingly.
 
-                if (currentUser == null) {
+                if (true) {
                     Intent dashBoardIntent = new Intent(splash.this, walkThrough.class);
 
                     startActivity(dashBoardIntent);
